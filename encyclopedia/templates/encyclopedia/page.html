@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ pageHead }}
+{% endblock %}
+
+
+
+
+{% block body %}
+<div class="centerTable"></div>
+<form action="{% url 'encyclopedia:edit_page' pageHead %}">
+    <header>
+        <button type="submit" method="get" class="button">Edit page</button>
+    </header>
+        <a style="color: darkred; text-align: center; -webkit-text-stroke: 1px black; font-size: 32px;">{{page|safe}}</a>
+            <input type="hidden" value="{{pageHead}}" name="pageHead">
+        </form>
+    </div>
+{% endblock %}
